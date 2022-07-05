@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = @question.answers.build
-    @answers = Answer.order created_at: :desc
+    @answers = @question.answers.order created_at: :desc
   end
 
   private

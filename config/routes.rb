@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   resources :questions do
-    resources :answers, only: %i[create destroy]
+    resources :answers, except: %i[new show]
   end
   # resources :questions, only: [:index, :new, :edit, :create, :update, :destroy, :show]
   # get '/questions', to: 'questions#index'
